@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="height: auto;">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>菜单滚动至顶部后固定-柯乐义</title>
+
+    <script type="text/javascript" src='/jquery/jquery-1.8.2.min.js'></script>
+    <script type="text/javascript" src="/jquery/jquery.appear.js"></script>
+
+    <script type="text/javascript" src='/bootstrap/js/bootstrap.js'></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/jquery/style.css">
+
+
+    <style type="text/css">
+        body {
+            margin:0;
+            padding:0;
+            z-index: 2;
+        }
+        .wrapper{margin-left:auto;margin-right:auto;}
+
+        #nav_keleyi_com{z-index: 10000; padding:10px;position:relative;top:0;background:#a94442;width:100%;height:80px;}
+        #nav_keleyi_com a{ text-decoration:none; color:#f5f5f5; font-size:20px; display:inline-block;margin:20px 10px;*display:inline;zoom:1;}
+
+        #nav_keleyi_com a:hover {
+            color:#23527c;
+        }
+
+
+        .saying {
+
+            font-size:22px;
+            margin-top:20px;
+            margin-left:100px;
+        }
+        .saying p {
+            letter-spacing: 10px;;
+            position: relative;
+            color:white;
+            float:left;
+            margin:20px;
+            padding:20px;
+            font-family:"Microsoft YaHei", "微软雅黑";
+        }
+
+        .saying-one {
+            left:-200px;
+        }
+        .saying-two {
+            left:1000px;
+        }
+        .nav-menu ul li {
+            position:relative;
+            float:left;
+            zoom:1
+        }
+        .nav-menu ul li a {
+            zoom:1;
+            font-size:20px;
+            margin:10px;
+        }
+        .worker {
+            position: relative;  margin-top:10px;text-align:center; width:100%;height:100px; border:1px solid #FFA300
+        }
+        .worker1 {
+            position: relative;margin-left:-1800px;}
+
+        .worker em h1 {
+            text-align: center;
+            font:bold 60px helvetica, arial, sans-serif;
+            color: red;
+            text-shadow: 0 0 4px white,
+            0 -5px 4px #ff3,
+            2px -10px 6px #fd3,
+            -2px -15px 11px #f80,
+            2px -25px 18px #f20;
+
+        }
+
+        .explain {
+
+            font-style: inherit;
+            letter-spacing: 3px;;
+            font-size:16px;margin:10px;
+            padding:20px 250px;
+        }
+
+
+        @-webkit-keyframes moveFromRight {
+            from {
+                -webkit-transform: translateX(100%);
+            }
+            to {
+                -webkit-transform: translateX(0%);
+            }
+        }
+
+
+
+
+
+    </style>
+</head>
+<body data-spy="scroll" data-target=".nav-menu" data-offset="0" >
+<img src="/jquery/1.jpg" style="position:fixed;margin:0px;width:100%;height:400px;z-index: -10000">
+<div  style="z-index: 2;height:400px;width:100%;position:absolute;background-color:rgba(128,128,128,0.3)">
+    <div class="saying">
+        <p class="saying-one" >天<br><br>行<br><br>健<br></p>
+        <p class="saying-one" >君<br><br>子<br><br>以<br><br>自<br><br>强<br><br>不<br><br>息</p>
+        <p class="saying-two">地<br><br>势<br><br>坤</p>
+        <p class="saying-two">君<br><br>子<br><br>以<br><br>厚<br><br>德<br><br>载<br><br>物</p>
+    </div>
+</div>
+<div class="wrapper" id="7" style="clear:both;z-index:10;position: relative;background-color:#cccccc;top:400px;width:100%;height:auto ">
+
+    <div id="nav_keleyi_com" class=".nav-menu" >
+
+
+        <a  class="scroll" href="/" style="margin-left:50px;border:1px #FFA300" >主页</a>
+
+        <a class="scroll" href="#we">关于我们</a>
+
+        <a class="scroll" href="#3">产品</a>
+
+        <a class="scroll" href="#4">博客</a>
+
+        <a class="scroll" data-offset="0" href="#call">联系我们</a>
+
+
+    </div>
+
+
+    <div class="nav-menu"  style="clear:both" style="position: relative">
+
+
+
+        <div class="worker" id="we"><em><h1>云曦工作室</h1></em></div>
+        <p class="explain">云曦工作室由一群有技术有实力的年轻人组成;立志于解决各大公司间的技术问题;我们能为您提供专业的服务;<br>
+            服务内容包括:<em style="color:#a94442">安卓开发 IOS开发 精美网页制作 网站开发等</em>
+        </p>
+
+
+
+        <section id="services" class="contain nav-link">
+            <div class="inner services">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-6 animated rollIn visible" data-animation="rollIn" data-animation-delay="0">
+                        <div class="service-box">
+                            <div class="wrap">
+                                <span class="fa fa-globe"><img src="/jquery/11.png"></span>
+
+                                <div class="content">
+                                    <h4>Web 开发</h4>
+                                    <p>搭建公司交互平台
+                                        <br>构建网络上的虚拟社交</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-6 animated rollIn visible" data-animation="rollIn" data-animation-delay="0">
+                        <div class="service-box">
+                            <div class="wrap">
+                                <span class="fa fa-android"><img src="/jquery/22.png"></span>
+                                <div class="content">
+                                    <h4>Android开发</h4>
+                                    <p>掌握原生程序开发技术
+                                        <br>跨越兼容性障碍
+                                        <br>丰富大家的掌上生活</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- End .col-md-4 col-sm-4 col-xs-6-->
+                    <div class="col-md-3 col-sm-4 col-xs-6 animated rollIn visible" data-animation="rollIn" data-animation-delay="0">
+                        <div class="service-box">
+                            <div class="wrap">
+                                <span class="fa fa-mobile"><img src="/jquery/33.png"></span>
+                                <div class="content">
+                                    <h4>iOS开发</h4>
+                                    <p>深入理解iOS开发规范
+                                        <br>提供优秀的客户端体验</p>
+                                </div>
+                                <!-- End .content -->
+                            </div>
+                            <!-- End .wrap -->
+                        </div>
+                        <!-- End .service-box -->
+                    </div>
+
+                    <!-- End .col-md-4 col-sm-4 col-xs-6 -->
+                    <div class="col-md-3 col-sm-4 col-xs-6 animated rollIn visible" data-animation="rollIn" data-animation-delay="0">
+                        <div class="service-box">
+                            <div class="wrap">
+                                <span class="fa fa-pencil-square-o"  style="margin-left:5px"><img src="/jquery/44.png"></span>
+                                <div class="content">
+                                    <h4>视觉设计</h4>
+                                    <p>视觉设计爱好者以激情和责任
+                                        <br>描绘网络之美</p>
+                                </div>
+                                <!-- End .content -->
+                            </div>
+                            <!-- End .wrap -->
+                        </div>
+                        <!-- End .service-box -->
+                    </div>
+                    <!-- End .col-md-4 col-sm-4 col-xs-6 -->
+                </div>
+            </div>
+            <!-- End Services Inner 1 -->
+        </section>
+
+
+        <div class="worker" id="call"  ><em><h1 class="worker1">联系我们</h1></em></div>
+        <p class="explain" style="margin-left:150px;">如果您有什么需求或者对我们感兴趣的话，请联系我们！</p>
+
+        <div class="worker" style="border:none" ><em><h1 class="worker1">QQ:511218143</h1></em></div>
+        <div class="worker" style="border:none" ><em ><h1 class="worker1">微信:Lyx952755</h1></em></div>
+        <div class="worker" style="border:none" ><em><h1 class="worker1">邮箱:511218143@qq.com</h1></em></div>
+
+
+    </div>
+
+
+</div>
+
+<script type="text/javascript" >
+
+    $('.worker1').appear();
+
+    $('.saying-one').animate({left:'200px'},2000);
+    $('.saying-two').animate({left:'300px'},2000);
+
+
+
+    $('.worker1').on('appear', function () {
+
+        $(this).animate({left:'900px'},1000);
+
+    });
+
+
+    function menuFixed(id){
+        var obj = document.getElementById(id);
+        var _getHeight = obj.offsetTop+400;
+
+        window.onscroll = function(){
+            changePos(id,_getHeight);
+        }
+    }
+    function changePos(id,height){
+        var obj = document.getElementById(id);
+        var scrollTop = document.documentElement.scrollTop ||window.pageYOffset ||document.body.scrollTop;
+        if((scrollTop) < height){
+            obj.style.position = 'relative';
+            $('.nav-menu').css('margin-top','0px');
+        }else{
+            obj.style.position = 'fixed';
+            $('.nav-menu').css('margin-top','100px');
+        }
+    };
+
+</script>
+<script type="text/javascript">
+    window.onload = function(){
+        menuFixed('nav_keleyi_com');
+    }
+</script>
+</body>
+</html>

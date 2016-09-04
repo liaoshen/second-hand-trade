@@ -1,0 +1,156 @@
+body {
+  padding: 0px;
+  margin:0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+  .head {
+    background-color:#F5F5F5;
+
+  }
+
+
+.head-bar {
+    background-color:#CCCCCC;
+    width:100%;
+    height:60px;
+  }
+.head-bar a{
+  text-decoration:none;
+}
+ul {
+    list-style-type:none;
+  }
+img {
+  width:100px;
+  height:100px;
+
+}
+a {
+  text-decoration:none;
+    color:#000;
+  cursor: pointer;}
+
+a.logo {
+  margin-left:60px;
+  margin-top:10px;
+  font-size:28px;
+  font-family:"Microsoft YaHei", "微软雅黑" ! important;
+  font-weight:bolder;
+  float:left;
+}
+.em1 {
+  color: #0bb9f8;
+}
+.em2 {
+  font-size:23px;
+}
+.right {
+  clear:both;
+  margin-left:55%;
+  margin-top:-40px;
+  float:left;
+}
+
+.right li {
+  font-size: 15px;
+  font-family:"Microsoft YaHei", "微软雅黑";
+  margin:0px 5px;
+  float:left;
+  padding: 15px 0;
+
+}
+
+.dropdown-menu li a{
+  font-family:"Microsoft YaHei", "微软雅黑" ;
+}
+
+#myset {
+  z-index:999999;
+  clear:both;
+  position:fixed;
+  right:20px;
+  top:12px;
+}
+.toast{
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  z-index:20000;
+  background-color:rgba(128,128,128,0.3);
+}
+.mytoast{
+  position:absolute;
+  left:35%;top:25%;
+  z-index:20001;
+  width:465px;height:325px;
+  background-color:white;
+  border-radius:5px;
+
+}
+
+.litoast{
+  background-color:#76EE00;
+  border-radius:5px;
+  height:50px;
+  margin-top:-10px;
+}
+.litoast h4{
+  padding:14px;
+}
+
+.mytoast h5{
+  float:left;
+  margin-left:20px;
+}
+
+.litoast h4 span {
+  margin-left:320px;
+  color:white;
+  cursor:pointer
+}.err {
+   float:left;color:red;margin:12px 15px;
+ }
+ .changed {
+   clear:both;
+ }
+.changed  input {
+  margin-left:20px;
+}
+
+.changed button{
+  width:200px;
+  height:30px;
+  margin-top:80px;
+  margin-left:-210px;
+  background-color:#76EE00
+
+}
+.show1 {
+clear:both;
+}
+.show1 div{
+  float:left;
+  margin-top:25px;
+  margin-left:40px;}
+.show1 input{margin-top:20px;margin-left:10px;float:left}
+
+.show2 {clear:both}
+
+.show2 div{float:left;margin-top:25px;margin-left:40px}
+.show2 input {margin-top:20px;margin-left:10px}
+
+.show3{clear:both;margin-top:10px;margin-left:90px}
+.show3 a{color:red}
+.mytoast button{
+  width:200px;height:35px;
+  border-radius:5px;
+  margin-top:20px;
+  margin-left:90px;
+  background-color:#76EE00
+
+}
+
+
+

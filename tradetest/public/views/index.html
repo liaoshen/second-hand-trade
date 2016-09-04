@@ -1,0 +1,198 @@
+<style>
+    .slidebox,.slidebox .slideboxSlide{width:900px;}
+    .slidebox,.slidebox .slideboxSlides,.slidebox .slideboxSlide{height:400px;}
+    #indexpage {
+        background-color: #F5F5F5;
+    }
+    #left {
+        position:fixed;
+        margin-top:40px;
+        margin-left:50px;
+        width:200px;
+        height:auto;
+        background-color: #c43c35;
+        float:left;
+
+    }
+    #left ul {
+        margin-left:-10px;
+        margin-top:20px;
+    }
+    #left ul li{
+        font-size: 16px;
+        font-family:"Microsoft YaHei", "微软雅黑" ;
+
+        padding:8px 0;
+        padding-left:10px;
+        margin-top:-10px;
+    }
+    #left ul li a{
+        color:#D3D3D3;
+
+    }
+    #left ul li a img{
+        width:38px;
+        height:38px;
+        margin-left:10px;
+        margin-right:10px;
+    }
+    #left ul li a:hover{
+        color:#0044cc;
+    }
+
+    #middle {
+        margin-left:310px;
+        float:left;
+        z-index:-1;
+
+    }
+    #rightContent {
+        clear:both;
+        width:1000px;
+        height:100%;
+        margin-left:280px;
+        background-color: #F5F5F5;
+    }
+
+    #myshop li {
+        width:280px;
+        height:300px;
+        float:left;
+        margin:15px;
+
+
+    }
+    #myshop li a {
+        text-decoration: none;
+    }
+    #myshop li a .myPic img {
+    position:relative; width:280px;height:180px}
+
+    #myshop li a .myPic img:hover {
+
+        -webkit-transform: scale(1.05);
+    }
+
+    .ourinfo a{
+        text-decoration:none;
+        margin:15px;
+      padding-left:10px;
+        color:white;
+    }
+
+    #tradeMessage div{
+
+        margin:15px;
+    }
+    .myPrice {
+        font-size:20px;
+        color:#dd1144;
+
+
+    }
+    .myPrice span {
+        margin-left:70px;
+    }
+
+
+
+
+    .tradeName p {
+        font-size:18px;
+        width:200px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .publishtime {
+        font-size:16px;
+        margin-left:20px;
+          float:left;
+    }
+    .shopLocation {
+        width:100px;
+
+        text-overflow: ellipsis;
+        margin-bottom:20px;
+        float:left;
+        font-size:14px;
+        color:#002a80;
+        margin-left:100px;
+        padding-left:50px;
+    }
+
+
+</style>
+
+<div id="indexpage" style="clear:both;margin-top:30px" data-spy="scroll" data-target=".top" data-offset="0">
+  <div id="left">
+  <ul class="nav nav-list" >
+      <li class="nav-header"><em style="color:white;padding-left:50px;">全部商品分类</em></li>
+      <li ><a ng-click="recent()" class="register"><img src="/images/index.png">最新发布</a></li>
+      <li  > <a ng-click="digital()"  class="register"><img src="/images/digital.png"> 闲置数码</a>  </li>
+      <li> <a   ng-click="ride()"  class="register"><img src="/images/ride.png">校园代步</a> </li>
+       <li> <a  ng-click="commodity()"  class="register"><img src="/images/commodity.png">电器日用</a> </li>
+      <li>   <a   ng-click="book()"  class="register"><img src="/images/book.png">图书教材</a>  </li>
+      <li> <a  ng-click="makeup()"  class="register"><img src="/images/makeup.png">美妆衣物</a> </li>
+      <li>  <a   ng-click="sport()"  class="register"><img src="/images/sport.png">运动棋牌</a> </li>
+      <li>  <a  ng-click="smallthing()"  class="register"><img src="/images/smallthing.png">其它</a> </li>
+  </ul>
+      <div  class="ourinfo" style="clear:both; margin:20px;">
+          <a href="/a">关于我们-联系我们</a><br>
+          <a>商业合作 </a>
+      </div>
+</div>
+
+    <div id="middle">
+    <div  id="slidebox_2" class="slidebox"  >
+        <ul>
+            <li >
+                <img style="width:900px ;height:400px;padding: 0px;margin: 0px" src="http://127.0.0.1:3000/public/files/101.png">
+
+            </li>
+            <li >
+                <img style="width:900px ;height:400px;padding: 0px;margin: 0px" src="http://127.0.0.1:3000/public/files/121.png">
+            </li>
+            <li >
+                <img style="width:900px ;height:400px;padding: 0px;margin: 0px" src="http://127.0.0.1:3000/public/files/01.png">
+            </li>
+        </ul>
+    </div>
+      </div>
+
+     <div class="title"   style="clear:both;width:930px;height:60px;margin-left:290px;">
+             <h3 style="font-weight: bold;padding:10px;">{{title}}</h3><br>
+         <div class="progress" style="clear:both;width:930px;height:10px;margin-top:-40px">
+             <div id="animate" class="progress-bar progress-bar-success" style="width:15%;background-color: blue;position: relative">zhu</div>
+         </div>
+
+     </div>
+
+    <div id="rightContent">
+     <ul id="myshop" >
+         <li ng-repeat="category in categorys">
+
+               <a href="/#/item/{{category._id}}">
+                   <div class="myPic">
+                       <img class="img-rounded" src='{{category.imgPaths[0]}}' >
+                   </div>
+                   <div id="tradeMessage">
+                   <div class="myPrice"> <em>￥{{category.price}}</em> <span>{{category.sold}}</span></div>
+
+
+              <div class="tradeName"><p>{{category.name}}</p></div>
+              <div class="publishtime">{{category.publishtimed}}</div>
+               <div class="shopLocation">{{category.location}}</div>
+                  </div>
+
+               </a>
+         </li>
+     </ul>
+   </div>
+
+    <a   style="position:fixed;top:80%;left:95%;" class="scroll" href="javascript:window.scrollTo(0,0)"><img style="width:60px;height:60px;" src="/jquery/top.png"  class="img-circle"></a>
+
+
+
+
+
+</div>

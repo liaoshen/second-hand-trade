@@ -1,0 +1,94 @@
+<style>
+    #myTrade {
+        margin-left:200px;
+        margin-top:80px;
+    }
+    #trades li{
+        width:280px;
+        height:300px;
+        float:left;
+        margin:10px;
+        background-color: #bfbfbf;
+    }
+
+
+    #trades li a {
+
+        text-decoration: none;
+    }
+    .ourinfo a{
+        margin:15px;
+        padding-left:10px;
+        color:white;
+    }
+
+    #tradeMessage div{
+
+        margin:13px;
+    }
+    .myPrice {
+        font-size:20px;
+        color:#dd1144;
+    }
+    .myPrice span{
+
+        margin-left:70px;
+    }
+    .tradeName  {
+
+    }
+    .tradeName p {
+
+        font-size: 18px;
+        width: 200px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+
+    .mypublishtime {
+
+
+        font-size:16px;
+        margin-left:20px;
+        float:left;
+    }
+    .shopLocation {
+
+        width:100px;
+
+        text-overflow: ellipsis;
+        margin-bottom:20px;
+        float:left;
+        font-size:14px;
+        color:#002a80;
+        margin-left:100px;
+        padding-left:50px;
+
+
+    }
+
+</style>
+<div id="myTrade">
+<h3 > 我发布的商品</h3><br>
+    <div class="progress" style="width:930px;height:10px;margin-top:-30px">
+        <div id="animate" class="progress-bar progress-bar-success" style="width:15%;background-color: blue;position: relative">zhu</div>
+    </div><br>
+    <ul id="trades">
+        <li ng-repeat="item in items">
+            <a href="/#/item/{{item._id}}">
+                <div id="myPic">
+                    <img class="img-rounded" style="width:280px;height:180px" src='{{item.imgPaths[0]}}' >
+                </div>
+                <div id="tradeMessage">
+                    <div class="myPrice"> <em>￥{{item.price}}</em><span >{{item.sold}}</span></div>
+                    <div class="tradeName"><p>{{item.name}}</p>  </div>
+
+
+                    <div class="mypublishtime">{{item.publishtimed}}</div>
+                    <div class="shopLocation">{{item.location}}</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    </div>

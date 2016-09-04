@@ -1,0 +1,96 @@
+
+<style>
+    .slidebox,.slidebox .slideboxSlide{width:450px;}
+    .slidebox,.slidebox .slideboxSlides,.slidebox .slideboxSlide{height:400px;}
+
+    .detailmain,.explainer{
+        width:80%;;
+        height:500px;
+        margin:80px 100px;
+        margin-botton:20px;
+        margin-left:10%;
+
+        background-color: #cccccc;
+
+    }
+    #slidebox_5 {
+        margin-left:30px;
+        margin-top:-30px;
+        float:left;
+    }
+    .detail{
+        float:left;
+        margin-left:50px;
+
+    }
+    .detail div{
+        margin:20px;
+        font-size:18px;
+        font-family:"Microsoft YaHei", "微软雅黑";
+    }
+    .detail-price {
+      color:red;
+        font-size:22px;
+        margin-top:10px;
+        display: inline;
+    }
+    #old {
+        margin-left:50px;
+        color:red;
+        font-size:20px;
+        display: inline;
+    }
+    .detail-location {
+        margin-top:10px;
+    }
+    .sell {
+        margin-top:20px;
+    }
+    .detail-time {
+        margin-top:20px;
+    }
+
+</style>
+
+<div id="page"  style="width:100%;height:auto" >
+    <div class="detailmain" >
+
+     <div style="padding:5px 10px;"><h4>{{item.category}} > {{item.name}}</h4></div>
+    <div id="slidebox_5" class="slidebox">
+        <ul id="mytrade">
+        </ul>
+   </div>
+
+      <div class="detail">
+        <div class="detail-name"><h2>{{item.name}}</h2></div>
+        <div  class="detail-price">￥{{item.price}}</div> <a id="old" ng-click="sold()" ng-show="isSold" style="">下架</a>
+        <div  class="detail-sold">{{item.sold}}</div>
+          <div  class="detail-location">地址:{{item.location}}</div>
+        <div class="sell" ng-show="sellmsg">卖家信息 <br><br>
+            <a ng-click="loginthis()" style="color:red">登入</a>或<a  style="color:red" ng-click="registerthis()">注册</a>可获得卖家联系方式
+        </div>
+
+          <div ng-show="selltel">手机:{{item.tel}}<br><br>
+                          QQ:{{item.qq}}<br><br>
+                          微信:{{item.weixin}}
+
+          </div>
+          <div class="detail-time">发布于{{item.publishtime}}</div>
+
+           </div>
+
+    </div>
+
+
+    <div class="second" style="clear:both;margin-top:-30px; " >
+
+        <div class="explainer" style="height:auto;">
+            <h3  style="margin:20px;margin-bottom:0px; padding:10px;">商品详情</h3>
+            <div class="progress" style="width:500px;height:5px;margin-left:20px;">
+                <div id="animate" class="progress-bar progress-bar-success" style="width:22%;background-color: blue;position: relative">zhu</div>
+            </div>
+            <div style="margin:10px;padding:10px;font-size:16px;">{{item.detail}}~</div>
+            <h5 style="padding:8px 15px;">联系我的时候，请说明是在大学城二手交易网看见的哦！☺</h5>
+    </div>
+</div>
+</div>

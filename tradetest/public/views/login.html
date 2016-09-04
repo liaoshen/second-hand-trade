@@ -1,0 +1,18 @@
+<div class="login-form" >
+    <div class="header">
+        <h1>Login Form</h1>
+        <span>Please login NJBlog,and you can free Register!</span>
+    </div>
+    <div class="content">
+        <input name="username" type="text" class="input username" placeholder="Username" ng-model="user.name" required />
+        <div class="icon-user" id="user-icon"></div>
+        <input name="password" type="password" class="input password" placeholder="Password"  ng-model="user.pass" required />
+        <div class="icon-pass" id="user-pass"></div>
+    </div>
+    <div class="footer">
+        <button  ng-click="login()" class="button">Login</button>
+        <!--  <input type="but <button ng-disabled="myForm.$invalid" ng-click="login()" class="button">Login</button>ton" name="button" value="Register" class="register" />-->
+        <button   ng-click="register()"  class="register">Register</button>
+        <div ng-show="err" ng-bind="err"></div>
+    </div>
+</div>

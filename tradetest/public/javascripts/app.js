@@ -1,0 +1,60 @@
+/**
+ * Created by lyx on 2016/7/26.
+ */
+angular.module('myApp', ['ui.router'])
+
+.config(function($stateProvider,$urlRouterProvider){
+    $stateProvider
+        .state('parent',{
+            url:'/',
+            templateUrl:'views/index.html',
+            controller:'layoutController' 
+        })
+        .state('parent.start',{
+            url:'/start',
+            templateUrl:'views/login.html',
+            controller:'page1Controller'
+
+        })
+        .state('login',{
+            url:'/login',
+            templateUrl:'views/login.html',
+            controller:'loginController'
+        })
+        .state('register',{
+            url:'/register',
+            templateUrl:'views/register.html',
+            controller:'registerController'
+        })
+        .state('logout',{
+            url:'/logout',
+            templateUrl:'views/logout.html',
+            controller:'logoutController'
+        })
+    .state('post',{
+        url:'/post',
+        templateUrl:'views/post.html',
+        controller:'postController'
+    })
+        .state('myItems',{
+            url:'/myItems',
+            templateUrl:'views/myTrade.html',
+            controller:'mytradeController'
+        })
+        .state('changeName',{
+            url:'/changeMessage',
+            templateUrl:'views/changeName.html',
+            controller:'changeNameController'
+        })
+        .state('changePass',{
+            url:'/changePassword',
+            templateUrl:'views/changePassword.html',
+            controller:'changePasswordController'
+        })
+        .state('detail',{
+            url:'/item/:id',
+            templateUrl:'views/detail.html',
+            controller:'detailController'
+        })
+    $urlRouterProvider.otherwise('/');
+});

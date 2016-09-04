@@ -1,0 +1,28 @@
+<div class="login-form" >
+    <div class="header">
+        <h1>Register</h1>
+        <span>Free Register!</span>
+    </div>
+    <div class="content">
+        <input type="text" name="username" ng-model="user.name" class="input username" placeholder="Username" ng-required="true" />
+
+        <input type="password" ng-model="user.pass"   class="input password"   placeholder="Password" name="password" required />
+
+
+
+
+
+        <!--  <input name="username" type="text" class="input username"  placeholder="Username" ng-model="user.name" required />-->
+        <div class="icon-user" id="user-icon"></div>
+
+
+        <!--<input name="password" type="password" class="input password" placeholder="Password"  ng-model="user.password" required />-->
+        <div class="icon-pass" id="user-pass"></div>
+    </div>
+    <div class="footer">
+        <button  ng-click="createClick()" class="button">Sign Up</button>
+        <!--  <input type="button" name="button" value="Register" class="register" />-->
+        <button   ng-click="login()"  class="register">Login</button>
+        <div ng-show="err" ng-bind="err"></div>
+    </div>
+</div>

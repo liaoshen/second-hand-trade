@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        script(src= '/jquery/jquery-1.7.1.min.js')
+        script(src= '/jquery/jquery.slideBox.js')
+        link(rel="stylesheet" href="/jquery/jquery.slideBox.css")
+        script $(document).ready(function(){$('#demo1').slideBox({});})
+
+  body
+    div(id="demo1" class="slideBox")
+      ul.items
+         li(style="background:url(http://127.0.0.1:3003/public/files/101.png) no-repeat;")
+           img(src="http://127.0.0.1:3003/public/files/101.png")
+         li(style="background:url(http://127.0.0.1:3003/public/files/121.png) no-repeat;")
+           img(src="http://127.0.0.1:3003/public/files/101.png")
+         li(style="background:url(http://127.0.0.1:3003/public/files/121.png) no-repeat;")
+           img(src="http://127.0.0.1:3003/public/files/101.png")

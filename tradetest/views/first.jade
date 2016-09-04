@@ -1,0 +1,120 @@
+doctype html
+html(ng-app='app')
+    head
+        meta(charset="utf-8")
+        meta(name="keywords",content="武汉大学城,二手工坊,校园,大学,大学生,二手,闲置,二手市场,跳蚤市场,旧货市场,二手网,二手交易,校园二手,校园二手市场,校园二手网,校园跳蚤市场,大学生二手,大学生二手市场,大学生二手网,大学生跳蚤市场")
+        meta(name="description",content="武汉大学城自己的二手交易平台！涵盖闲置数码、校园代步、电器日用、图书教材、美妆衣物、运动棋牌、票券小物。满足武汉学生校园内的二手交易的需求，交易更方便。")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title 武汉大学城二手工坊 - 武汉大学生自己的二手市场
+        script(src= '/angular/angular.js')
+        script(src= '/angular/angular-ui-router.js')
+        script(src= '/jquery/jquery-1.8.2.min.js')
+        script(src= '/jquery/jquery-ui.min.js')
+        script(src= '/jquery/jquery.mSimpleSlidebox.js')
+        link(rel="stylesheet" href="/jquery/jquery.mSimpleSlidebox.css")
+        script(src= '/bootstrap/js/bootstrap.min.js')
+        link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+        script(src='/javascripts/rou.js')
+        script(src='/javascripts/app.js')
+        script(src='/javascripts/indexController.js')
+        script(src='/javascripts/layoutController.js')
+        script(src='/javascripts/loginController.js')
+        script(src='/javascripts/logoutController.js')
+        script(src='/javascripts/postController.js')
+        script(src='/javascripts/registerController.js')
+        script(src='/javascripts/mytradeController.js')
+        script(src='/javascripts/changeNameController.js')
+        script(src='/javascripts/changePasswordController.js')
+        script(src='/javascripts/detailController.js')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script $(document).ready(function () {$(".slidebox").mSlidebox({controlsPosition: {buttonsPosition: "inside", thumbsPosition: "inside"},pauseOnHover: true,});})
+ body(class="ng-cloak"  ng-controller='indexController'  ng-cloak)
+     div(class="header"   ng-controller='layoutController'  ng-cloak)
+        nav.white.navl(class="navbar navbar-inverse navbar-fixed-top")
+          div.head-bar(class="navbar-collapse collapse")
+            a.logo(href="/")
+                em.em1 大学城
+                em.em2 二手交易中心
+            ul.right(style="list-style-type:none")
+               li.publish-btn
+                   button.red(ng-click='upload()' class='btn btn-danger btn-large' style="margin-top:-8px;") 我要发布
+               li
+                   a(ng-click='myshop()') 我发布的商品
+
+               li
+                   a(ng-click="loginthis()" ) {{registera.name}}
+               li
+                   a(ng-click="registerthis()") {{registera.namea}}
+
+       div(class="btn-group" ng-show="myset" id='myset' )
+             button(class="btn btn-danger"  data-toggle="dropdown") 个人中心
+             button(class="btn btn-danger dropdown-toggle" data-toggle="dropdown" )
+                span(class="caret")
+             ul(class="dropdown-menu")
+                 li
+                     a(href='#/myItems') 我发布的商品
+                 li
+                     a(ng-click="changeName()") 修改用户名
+                 li
+                     a(ng-click="changePass()") 修改密码
+
+
+     div.toast(ng-show="showNow")
+             div.mytoast
+                    div.litoast
+                     h4 修改用户名
+                       span(ng-click="disappear()") X
+                    h5 新的用户名
+                    div.err(ng-show="err" ng-bind="err" )
+                    div.changed
+                     input(type="text" ng-model="myName" placeholder="用户名" required)
+                     button(  ng-click="setmyName()") 确认
+
+     div.toast(ng-show="showpassNow")
+             div.mytoast
+                    div.litoast
+                     h4 更改密码
+                        span(ng-click="disappear()")  X
+                    h5 新的密码
+                    div.err(ng-show="err" ng-bind="err")
+                    div.changed
+                     input(type="text" ng-model="pass" placeholder="新密码" required)
+                     button(  ng-click="setPass()") 确认
+
+     div.toast(ng-show="showLogin")
+         div.mytoast
+             div.litoast
+                 h4 登入
+                     span(style="margin-left:380px" ng-click="disappear()")  X
+             h5 请登入
+             div.err(ng-show="err" ng-bind="err")
+             div.show1
+              div 账号:
+              input(type="text" ng-model="user.name" placeholder="用户名" required)
+             div.show2
+              div 密码:
+              input(type="text" ng-model="user.pass"  placeholder="密码" required)
+             div.show3 没有账号，立即
+               a(ng-click="registering()") 注册
+             button( ng-click="mylogin()") 登 入
+
+     div.toast(ng-show="showRegister")
+         div.mytoast
+             div.litoast
+                 h4 注册
+                     span(style="margin-left:380px" ng-click="disappear()")  X
+             h5 请注册
+             div.err(ng-show="err" ng-bind="err")
+             div.show1
+                 div 账号:
+                 input(type="text" ng-model="user.name"  placeholder="注册用户名" required)
+             div.show2
+                 div 密码:
+                 input(type="text" ng-model="user.pass" placeholder="设置密码" required)
+             div.show3 已有账号，立即
+                  a(ng-click="logining()") 登入
+             button( ng-click="myregister()") 注 册
+
+
+     div#top
+     div(ui-view='' )
